@@ -1,0 +1,75 @@
+##
+# You should look at the following URL's in order to grasp a solid understanding
+# of Nginx configuration files in order to fully unleash the power of Nginx.
+# https://www.nginx.com/resources/wiki/start/
+# https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/
+# https://wiki.debian.org/Nginx/DirectoryStructure
+#
+# In most cases, administrators will remove this file from sites-enabled/ and
+# leave it as reference inside of sites-available where it will continue to be
+# updated by the nginx packaging team.
+#
+# This file will automatically load configuration files provided by other
+# available underneath a path with that package name, such as /drupal8.
+# applications, such as Drupal or Wordpress. These applications will be made
+#
+# Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
+##
+
+# Default server configuration
+#
+server {
+	root /var/www/html;
+
+	location /rucogs/test/frontend/ {
+		proxy_pass http://localhost:8081/rucogs/test/frontend/;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+	}
+
+	location /rucogs/frontend {
+		alias /var/www/rucogs/;
+		try_files $uri $uri/ /index.html =404;
+	}
+
+	location /rucogs/backend/ {
+		proxy_pass http://localhost:3000/;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+		
+		client_max_body_size 100M;
+	}
+
+	server_name atlinx.net www.atlinx.net; # managed by Certbot
+
+	listen [::]:443 ssl ipv6only=on; # managed by Certbot
+	listen 443 ssl; # managed by Certbot
+	ssl_certificate /etc/letsencrypt/live/atlinx.net/fullchain.pem; # managed by Certbot
+	ssl_certificate_key /etc/letsencrypt/live/atlinx.net/privkey.pem; # managed by Certbot
+	include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+	ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+	location /nginx_status {
+		stub_status on;
+		allow 127.0.0.1;
+		deny all;
+	}
+
+	if ($host = www.atlinx.net) {
+			return 301 https://$host$request_uri;
+	} # managed by Certbot
+
+	if ($host = atlinx.net) {
+			return 301 https://$host$request_uri;
+	} # managed by Certbot
+
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	server_name atlinx.net www.atlinx.net;
+
+	return 404; # managed by Certbot
+}
