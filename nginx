@@ -1,3 +1,7 @@
+# This should be placed in 
+# - /etc/nginx/site-available
+#	- /etc/nginx/site-enabled
+
 ##
 # You should look at the following URL's in order to grasp a solid understanding
 # of Nginx configuration files in order to fully unleash the power of Nginx.
