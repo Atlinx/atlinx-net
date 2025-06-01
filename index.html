@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <html>
+
 <head>
   <title>Atlinx</title>
   <meta name="title" content="Atlinx">
@@ -21,10 +22,14 @@
   <meta property="twitter:image" content="https://atlinx.net/meta_banner.png">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌇</text></svg>">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌇</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
   <style>
     :root {
       font-family: 'Urbanist', sans-serif;
@@ -47,23 +52,23 @@
 
     a:active,
     a:link {
-      color: #cca176;
+      color: #ff6398;
     }
-    
+
     a:visited {
-      color: #D0A478;
+      color: #db4174;
     }
 
     a:hover {
-      color: #e0b68c;
+      color: #ffa3c2;
     }
-    
+
     .button:active,
     .button:visited,
     .button:link,
     .button,
     button {
-      background-color: #903e59;
+      background-color: #ff6398;
       padding: 0.4em 2em;
       font-family: 'Urbanist', sans-serif;
       font-size: 1em;
@@ -78,16 +83,20 @@
 
     .button:hover,
     button:hover {
-      background-color: #ad506f;
+      background-color: #db4174;
       color: rgb(219, 210, 210);
       transform: scale(1.03) translateY(-5%);
     }
-    
+
     .button:active,
     button:active {
-      background-color: #85304c;
+      background-color: #db4174;
       color: rgb(204, 192, 192);
       transform: scale(1) translateY(5%);
+    }
+
+    .title {
+      font-family: "Poetsen One", sans-serif;
     }
 
     .big-title {
@@ -117,7 +126,7 @@
         font-size: 90%;
       }
     }
-    
+
     @media screen and (max-width: 600px) {
       :root {
         font-size: 80%;
@@ -128,16 +137,17 @@
         margin: 0;
         font-weight: 900;
       }
-      
+
       .content-container {
         padding: 2em;
       }
     }
-    
+
     @media screen and (max-width: 400px) {
       :root {
         font-size: 80%;
       }
+
       .big-title {
         font-size: 3em;
         margin: 0;
@@ -161,7 +171,7 @@
     .stagger-1 {
       animation-delay: calc(var(--stagger) * 1);
     }
-    
+
     .stagger-2 {
       animation-delay: calc(var(--stagger) * 2);
     }
@@ -169,26 +179,36 @@
     .stagger-3 {
       animation-delay: calc(var(--stagger) * 3);
     }
-    
+
     .stagger-4 {
       animation-delay: calc(var(--stagger) * 4);
     }
-    
+
     .stagger-5 {
       animation-delay: calc(var(--stagger) * 5);
     }
 
     @keyframes show {
-      0% { opacity: 0; transform: translateY(-10%); }
-      100% { opacity: 1; transform: translateY(0%); }
+      0% {
+        opacity: 0;
+        transform: translateY(-10%);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0%);
+      }
     }
   </style>
   <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 </head>
+
 <body>
   <div style="
+    background-color: rgba(48, 48, 48, 0.5);
+    background-blend-mode: multiply;
     background-image: url('profile_background.png');
-    background-position: bottom;
+    background-position: center;
     background-repeat: repeat-x;
     background-size: cover;
     min-height: 100vh;
@@ -208,13 +228,15 @@
         <div style="
           max-width: 30em;
         ">
-          <h1 class="big-title show stagger-0">Welcome👋</h1>
+          <h1 class="title big-title show stagger-0">Welcome 👋</h1>
           <div class="show stagger-1">
-            <p>Hey everyone, I'm <b>Alan</b>. I also go by <b>Atlinx</b> online.</p>
-            <p>I'm a programmer, full-stack web developer, game developer, and part-time artist. I run a small indie game development studio called <a href="https://www.fracturalstudios.com" target="_blank">fractural studios</a>.</p>
+            <p>Hey everyone, I'm <b>Alina</b> (she/her). I also go by <b>Atlinx</b> online.</p>
+            <p>I'm a programmer, full-stack web developer, game developer, and part-time artist. I run a small indie
+              game development studio called <a href="https://www.fracturalstudios.com" target="_blank">fractural
+                studios</a>.</p>
           </div>
           <div class="show stagger-2">
-            <h2>Socials 😎</h2>
+            <h2 class="title">Socials 🔗</h2>
             <div style="
               display: flex;
               flex-direction: row;
@@ -224,11 +246,11 @@
               <a class="button" href="https://twitter.com/atlinxnet" target="_blank">
                 <span class="iconify-inline" data-icon="akar-icons:twitter-fill"></span>
                 AtlinxNet
-              </a> 
+              </a>
               <a class="button" href="https://twitter.com/atlinxart" target="_blank">
                 <span class="iconify-inline" data-icon="akar-icons:twitter-fill"></span>
                 AtlinxArt
-              </a> 
+              </a>
               <a class="button" href="https://github.com/atlinx" target="_blank">
                 <span class="iconify-inline" data-icon="akar-icons:github-fill"></span>
                 Atlinx
@@ -237,8 +259,9 @@
           </div>
         </div>
         <img class="avatar show stagger-3" src="profile_picture.png">
-      </div> 
+      </div>
     </div>
   </div>
 </body>
+
 </html>
