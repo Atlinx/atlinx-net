@@ -5,35 +5,65 @@
 <head>
   <title>Atlinx</title>
   <meta name="title" content="Atlinx">
-  <meta name="description" content="College Student, Video Game + Web Developer, and Artist">
+  <meta name="description" content="Grad Student, Robotics Researcher, Game Dev, and Artist">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://atlinx.net/">
   <meta property="og:title" content="Atlinx">
-  <meta property="og:description" content="College Student, Video Game + Web Developer, and Artist">
-  <meta property="og:image" content="https://atlinx.net/meta_banner.png">
+  <meta property="og:description" content="Grad Student, Robotics Researcher, Game Dev, and Artist">
+  <meta property="og:image" content="https://atlinx.net/pictures/cowgirl_bg_pink.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://atlinx.net/">
   <meta property="twitter:title" content="Atlinx">
-  <meta property="twitter:description" content="College Student, Video Game + Web Developer, and Artist">
-  <meta property="twitter:image" content="https://atlinx.net/meta_banner.png">
+  <meta property="twitter:description" content="Grad Student, Robotics Researcher, Game Dev, and Artist">
+  <meta property="twitter:image" content="https://atlinx.net/pictures/cowgirl_bg_pink.png">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌇</text></svg>">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+  <link rel="icon" href="pictures/cowgirl_pfp_3.jpg">
   <style>
     :root {
+      --color-pink: #FF6798;
+      --color-white: #E6E6E6;
+    }
+
+    @font-face {
+      font-family: 'Urbanist';
+      src: url('fonts/urbanist-latin-500-normal.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Urbanist';
+      src: url('fonts/urbanist-latin-900-normal.woff2') format('woff2');
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'RL Madena';
+      src: url('fonts/RL-Madena.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Novecento';
+      src: url('fonts/Novecentosanswide-Normal.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
       font-family: 'Urbanist', sans-serif;
-      color: white;
+      color: var(--color-white);
     }
 
     p {
@@ -52,15 +82,15 @@
 
     a:active,
     a:link {
-      color: #ff6398;
+      color: var(--color-white);
     }
 
     a:visited {
-      color: #db4174;
+      color: var(--color-white);
     }
 
     a:hover {
-      color: #ffa3c2;
+      font-weight: bold;
     }
 
     .button:active,
@@ -68,47 +98,56 @@
     .button:link,
     .button,
     button {
-      background-color: #ff6398;
-      padding: 0.4em 2em;
+      background-color: var(--color-white);
+      padding: 0.5em 2em;
       font-family: 'Urbanist', sans-serif;
       font-size: 1em;
       font-weight: 500;
-      color: white;
+      color: var(--color-pink);
       transition: ease-out 0.1s;
       border: none;
-      border-radius: 5em;
       text-decoration: inherit;
       white-space: nowrap;
     }
 
     .button:hover,
     button:hover {
-      background-color: #db4174;
-      color: rgb(219, 210, 210);
+      background-color: var(--color-pink);
+      color: var(--color-white);
       transform: scale(1.03) translateY(-5%);
     }
 
-    .button:active,
-    button:active {
-      background-color: #db4174;
-      color: rgb(204, 192, 192);
-      transform: scale(1) translateY(5%);
+    .subtitle {
+      font-family: "Novecento", sans-serif;
+      font-weight: 500;
+      font-size: 1em;
+      text-transform: uppercase;
+      letter-spacing: 1em;
     }
 
     .title {
-      font-family: "Poetsen One", sans-serif;
+      font-family: "RL Madena", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: -0.077em;
+      display: inline-block;
+      transform: scale(1, 1);
+      scale: 1 1.75;
     }
 
     .big-title {
       font-size: 5em;
       margin: 0;
-      font-weight: 900;
+      font-weight: 100;
     }
 
     .avatar {
       width: 15em;
       height: 15em;
       border-radius: 50%;
+    }
+
+    .content-left {
+      max-width: 30em;
     }
 
     .content-container {
@@ -121,9 +160,25 @@
       box-sizing: border-box;
     }
 
+    .content-window {
+      background-color: var(--color-pink);
+      /* border: 8px solid var(--color-white); */
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+      gap: 4em;
+      padding: 2em;
+    }
+
     @media screen and (max-width: 1000px) {
       :root {
         font-size: 90%;
+      }
+
+      .content-window {
+        flex-direction: column;
       }
     }
 
@@ -139,7 +194,11 @@
       }
 
       .content-container {
-        padding: 2em;
+        padding: 1em;
+      }
+
+      .content-window {
+        padding: 1em;
       }
     }
 
@@ -205,9 +264,8 @@
 
 <body>
   <div style="
-    background-color: rgba(48, 48, 48, 0.5);
     background-blend-mode: multiply;
-    background-image: url('profile_background.png');
+    background-image: url('pictures/cowgirl_bg_pink_left.png');
     background-position: center;
     background-repeat: repeat-x;
     background-size: cover;
@@ -215,20 +273,10 @@
     min-width: 100vw;
   ">
     <div class="content-container">
-      <div style="
-        filter: drop-shadow(0 0 0.75rem black);
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-        align-items: center;
-        width: fit-content;
-        gap: 4em;
-        ">
-        <div style="
-          max-width: 30em;
-        ">
-          <h1 class="title big-title show stagger-0">Welcome 👋</h1>
+      <div class="content-window show stagger-0">
+        <div class="content-left">
+          <h1 class="title big-title show stagger-0">Atlinx</h1>
+          <h1 class="subtitle show stagger-0">THROUGH THE STORM WE HELD STEADY</h1>
           <div class="show stagger-1">
             <p>Hey everyone, I'm <b>Alina</b> (she/her). I also go by <b>Atlinx</b> online.</p>
             <p>I'm a programmer, full-stack web developer, game developer, and part-time artist. I run a small indie
@@ -236,7 +284,7 @@
                 studios</a>.</p>
           </div>
           <div class="show stagger-2">
-            <h2 class="title">Socials 🔗</h2>
+            <h2 class="title">Socials</h2>
             <div style="
               display: flex;
               flex-direction: row;
@@ -258,7 +306,7 @@
             </div>
           </div>
         </div>
-        <img class="avatar show stagger-3" src="profile_picture.png">
+        <img class="avatar show stagger-1" src="pictures/cowgirl_pfp_3.jpg">
       </div>
     </div>
   </div>
